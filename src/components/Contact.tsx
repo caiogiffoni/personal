@@ -27,7 +27,7 @@ const lookingFor = [
     label: "Team",
     value: "Distributed, international teams where autonomy is expected",
   },
-  { label: "Location", value: "Remote-first (São Paulo, Brazil — UTC-3)" },
+  { label: "Location", value: "Remote-first (São Paulo, Brazil - UTC-3)" },
 ];
 
 const Contact = () => {

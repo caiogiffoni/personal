@@ -9,22 +9,23 @@ import {
   Link,
   Icon,
   useBreakpointValue,
-} from '@chakra-ui/react'
-import { FaGithub, FaLinkedin, FaMoon, FaSun } from 'react-icons/fa'
+} from "@chakra-ui/react";
+import { FaGithub, FaLinkedin, FaMoon, FaSun } from "react-icons/fa";
+import CONFIG from "../config/config";
 
 const navLinks = [
-  { label: 'About',    href: '#about' },
-  { label: 'Journey',  href: '#journey' },
-  { label: 'Projects', href: '#projects' },
-  { label: 'Contact',  href: '#contact' },
-]
+  { label: "About", href: "#about" },
+  { label: "Journey", href: "#journey" },
+  { label: "Projects", href: "#projects" },
+  { label: "Contact", href: "#contact" },
+];
 
 const Navbar = () => {
-  const { toggleColorMode, colorMode } = useColorMode()
-  const bg = useColorModeValue('#e2e2e2', '#212121')
-  const accent = useColorModeValue('blue.500', 'green.400')
-  const linkColor = useColorModeValue('gray.600', 'gray.300')
-  const showLinks = useBreakpointValue({ base: false, md: true })
+  const { toggleColorMode, colorMode } = useColorMode();
+  const bg = useColorModeValue("#e2e2e2", "#212121");
+  const accent = useColorModeValue("blue.500", "green.400");
+  const linkColor = useColorModeValue("gray.600", "gray.300");
+  const showLinks = useBreakpointValue({ base: false, md: true });
 
   return (
     <Box
@@ -41,7 +42,7 @@ const Navbar = () => {
     >
       <Flex justify="space-between" align="center" maxW="1100px" mx="auto">
         <Text fontWeight="700" fontSize="lg" color={accent} fontFamily="mono">
-          caio.dev
+          caiogiffoni
         </Text>
 
         <HStack spacing={{ base: 2, md: 6 }}>
@@ -53,14 +54,14 @@ const Navbar = () => {
                 fontSize="sm"
                 color={linkColor}
                 fontWeight="500"
-                _hover={{ color: accent, textDecoration: 'none' }}
+                _hover={{ color: accent, textDecoration: "none" }}
               >
                 {label}
               </Link>
             ))}
 
           <HStack spacing={1}>
-            <Link href="https://github.com/caiogiffoni" isExternal>
+            <Link href={CONFIG.GITHUB} isExternal>
               <IconButton
                 aria-label="GitHub"
                 icon={<Icon as={FaGithub} />}
@@ -68,8 +69,7 @@ const Navbar = () => {
                 size="sm"
               />
             </Link>
-            {/* TODO: replace with your actual LinkedIn URL */}
-            <Link href="https://linkedin.com/in/caiogiffoni" isExternal>
+            <Link href={CONFIG.LINKEDIN} isExternal>
               <IconButton
                 aria-label="LinkedIn"
                 icon={<Icon as={FaLinkedin} />}
@@ -79,7 +79,7 @@ const Navbar = () => {
             </Link>
             <IconButton
               aria-label="Toggle color mode"
-              icon={<Icon as={colorMode === 'dark' ? FaSun : FaMoon} />}
+              icon={<Icon as={colorMode === "dark" ? FaSun : FaMoon} />}
               onClick={toggleColorMode}
               variant="ghost"
               size="sm"
@@ -88,7 +88,7 @@ const Navbar = () => {
         </HStack>
       </Flex>
     </Box>
-  )
-}
+  );
+};
 
-export default Navbar
+export default Navbar;

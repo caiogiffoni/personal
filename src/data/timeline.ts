@@ -44,7 +44,7 @@ export const timelineEvents: TimelineEvent[] = [
     role: "Bachelor's in Civil Engineering",
     organization: 'Universidade de Fortaleza',
     description:
-      'Built a strong analytical and problem-solving foundation — systematic thinking and large-scale project management skills that would later translate directly into software engineering.',
+      'Built a strong analytical and problem-solving foundation - systematic thinking and large-scale project management skills that would later translate directly into software engineering.',
     category: 'education',
   },
   {
@@ -62,8 +62,7 @@ export const timelineEvents: TimelineEvent[] = [
     role: 'Civil Engineer',
     organization: 'KPR Rodan',
     description:
-      'Led budget planning for a R$40M construction project. Cut equipment rental costs by 50% by designing a custom control process — my first taste of systemic process optimisation.',
-    tech: ['AutoCAD', 'Revit', 'MS Project', 'Excel'],
+      'Managed teams and budgets on a R$40M construction project. Redesigned the equipment rental process and cut those costs in half.',
     category: 'engineering',
   },
   {
@@ -81,8 +80,7 @@ export const timelineEvents: TimelineEvent[] = [
     role: 'Civil Engineer',
     organization: 'City Hall',
     description:
-      'Managed R$3M+ in municipal infrastructure projects, simultaneously supervising teams across 15 construction sites and ensuring on-time, on-budget delivery.',
-    tech: ['AutoCAD', 'Revit', 'MS Project'],
+      'Managed R$5M+ in municipal infrastructure projects, simultaneously supervising teams across 15 construction sites and ensuring on-time, on-budget delivery.',
     category: 'engineering',
   },
   {
@@ -91,7 +89,7 @@ export const timelineEvents: TimelineEvent[] = [
     role: 'Full Stack Web Development Bootcamp',
     organization: 'Kenzie Academy Brasil',
     description:
-      'The pivot. After years managing construction, I decided to build software instead. Committed to an intensive full-stack bootcamp and never looked back.',
+      'After years managing construction, I decided to build software instead. Committed to an intensive full-stack bootcamp and never looked back.',
     tech: ['Python', 'Django', 'JavaScript', 'React', 'Node.js', 'TypeScript'],
     category: 'education',
     featured: true,
@@ -102,7 +100,7 @@ export const timelineEvents: TimelineEvent[] = [
     role: 'Assistant Teacher',
     organization: 'Kenzie Academy Brasil',
     description:
-      'Immediately after graduating, I was invited back to teach. Mentored 50+ students in web development — a signal that the best way to deeply learn something is to teach it.',
+      'Mentored 50+ students in web development. The best way to deeply learn something is to teach it.',
     tech: ['React', 'JavaScript', 'TypeScript', 'Node.js', 'Docker', 'SQL'],
     category: 'teaching',
   },
@@ -110,7 +108,7 @@ export const timelineEvents: TimelineEvent[] = [
     id: '8',
     period: 'Dec 2022 – Oct 2024',
     role: 'Software Developer',
-    organization: 'Weduu — Data & A.I.',
+    organization: 'Weduu - Data & A.I.',
     description:
       'Built B2B commerce automation for the consumer goods industry, saving clients 90% of manual order processing time.',
     highlights: [
@@ -148,7 +146,7 @@ export const timelineEvents: TimelineEvent[] = [
       'Building fully autonomous AI agents for healthcare Revenue Cycle Management — replacing manual billing work with agents that operate 24/7.',
     highlights: [
       'Payment Posting Agent: eliminated a 60-day billing backlog, accelerating revenue by 2 months',
-      'Appeal Submission Agent: cut submission time by 2 months with proactive payer follow-up automation',
+      'Appeal Submission Agent: cut submission time by 4 months with proactive payer follow-up automation',
       'Established automated testing strategies across agent workflows',
       'Mentored new engineers; supported global CI/CD delivery workflows',
     ],

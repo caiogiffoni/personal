@@ -10,21 +10,22 @@ import {
   Badge,
   Icon,
   Link,
-} from '@chakra-ui/react'
-import { motion } from 'framer-motion'
-import { FaGithub, FaLinkedin, FaDownload } from 'react-icons/fa'
+} from "@chakra-ui/react";
+import { motion } from "framer-motion";
+import { FaGithub, FaLinkedin, FaDownload } from "react-icons/fa";
+import CONFIG from "../config/config";
 
-const MotionBox = motion(Box)
+const MotionBox = motion(Box);
 
 const fadeUp = (delay: number) => ({
   initial: { opacity: 0, y: 24 },
   animate: { opacity: 1, y: 0 },
   transition: { duration: 0.5, delay },
-})
+});
 
 const Hero = () => {
-  const accent = useColorModeValue('blue.500', 'green.400')
-  const subColor = useColorModeValue('gray.600', 'gray.400')
+  const accent = useColorModeValue("blue.500", "green.400");
+  const subColor = useColorModeValue("gray.600", "gray.400");
 
   return (
     <Box
@@ -40,11 +41,11 @@ const Hero = () => {
         <VStack align="flex-start" spacing={7}>
           <MotionBox {...fadeUp(0)}>
             <Text color={accent} fontFamily="mono" fontSize="sm" mb={3}>
-              {'// hello world'}
+              {"// hello world"}
             </Text>
             <Heading
               as="h1"
-              fontSize={{ base: '5xl', md: '7xl' }}
+              fontSize={{ base: "5xl", md: "7xl" }}
               fontWeight="800"
               lineHeight="1.05"
               letterSpacing="-1px"
@@ -56,7 +57,7 @@ const Hero = () => {
           <MotionBox {...fadeUp(0.15)}>
             <Heading
               as="h2"
-              fontSize={{ base: 'xl', md: '2xl' }}
+              fontSize={{ base: "xl", md: "2xl" }}
               fontWeight="400"
               color={subColor}
             >
@@ -65,24 +66,27 @@ const Hero = () => {
           </MotionBox>
 
           <MotionBox {...fadeUp(0.3)} maxW="580px">
-            <Text fontSize={{ base: 'md', md: 'lg' }} color={subColor} lineHeight="1.85">
-              Former civil engineer who traded blueprints for bytecode.
-              Now building AI agents that automate healthcare billing —
-              turning months of manual work into near real-time processing.
-              4+ years of turning complex problems into scalable software.
+            <Text
+              fontSize={{ base: "md", md: "lg" }}
+              color={subColor}
+              lineHeight="1.85"
+            >
+              Former civil engineer turned software developer. I help companies
+              automate processes, cut operational costs, and build the software
+              they actually need. From internal tools to production systems. 4+
+              years turning complex problems into clean, scalable solutions
             </Text>
           </MotionBox>
 
           <MotionBox {...fadeUp(0.45)}>
             <HStack spacing={2} flexWrap="wrap" rowGap={2}>
               {[
-                { label: 'Python', scheme: 'blue' },
-                { label: 'React', scheme: 'cyan' },
-                { label: 'AWS Certified', scheme: 'orange' },
-                { label: 'AI Agents', scheme: 'green' },
-                { label: 'Full Stack', scheme: 'purple' },
-                { label: 'English — TOEFL 96', scheme: 'teal' },
-                { label: 'Open to remote', scheme: 'gray' },
+                { label: "Python", scheme: "blue" },
+                { label: "React", scheme: "cyan" },
+                { label: "AWS Certified", scheme: "orange" },
+                { label: "AI Agents", scheme: "green" },
+                { label: "Full Stack", scheme: "purple" },
+                { label: "Open to remote", scheme: "gray" },
               ].map(({ label, scheme }) => (
                 <Badge
                   key={label}
@@ -101,32 +105,31 @@ const Hero = () => {
 
           <MotionBox {...fadeUp(0.6)}>
             <HStack spacing={3} flexWrap="wrap" rowGap={3}>
-              {/* TODO: replace with your actual LinkedIn URL */}
               <Button
                 as={Link}
-                href="https://linkedin.com/in/caiogiffoni"
+                href={CONFIG.LINKEDIN}
                 isExternal
                 leftIcon={<Icon as={FaLinkedin} />}
                 colorScheme="green"
                 size="md"
-                _hover={{ textDecoration: 'none' }}
+                _hover={{ textDecoration: "none" }}
               >
                 LinkedIn
               </Button>
               <Button
                 as={Link}
-                href="https://github.com/caiogiffoni"
+                href={CONFIG.GITHUB}
                 isExternal
                 leftIcon={<Icon as={FaGithub} />}
                 variant="outline"
                 size="md"
-                _hover={{ textDecoration: 'none' }}
+                _hover={{ textDecoration: "none" }}
               >
                 GitHub
               </Button>
               <Button
                 as="a"
-                href="/cv.pdf"
+                href={CONFIG.CV}
                 download
                 leftIcon={<Icon as={FaDownload} />}
                 variant="ghost"
@@ -139,7 +142,7 @@ const Hero = () => {
         </VStack>
       </Container>
     </Box>
-  )
-}
+  );
+};
 
-export default Hero
+export default Hero;

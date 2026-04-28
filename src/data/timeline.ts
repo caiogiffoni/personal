@@ -50,7 +50,7 @@ export const timelineEvents: TimelineEvent[] = [
   {
     id: '2',
     period: '2014 – 2015',
-    role: 'Exchange Program — Civil Engineering',
+    role: 'Exchange Program - Civil Engineering',
     organization: 'University of Liverpool, UK',
     description:
       'Studied abroad and became fluent in English, opening doors to international opportunities and global teams.',

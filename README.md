@@ -34,6 +34,10 @@ All page content is in `src/data/` — plain TypeScript files, no CMS or API:
 
 External links (LinkedIn, GitHub, CV) are in `src/config/config.ts`.
 
+## Backlog
+
+- [ ] Portuguese (PT-BR) language toggle
+
 ## Deployment
 
 Pushing to `main` triggers the GitHub Actions pipeline (`.github/workflows/deploy.yml`), which:

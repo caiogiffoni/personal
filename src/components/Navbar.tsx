@@ -15,6 +15,7 @@ import { FaGithub, FaLinkedin, FaMoon, FaSun, FaBars, FaTimes } from "react-icon
 import { AnimatePresence } from "framer-motion";
 import { MotionBox } from "../lib/motion";
 import CONFIG from "../config/config";
+import { useEffect, useRef } from "react";
 
 const navLinks = [
   { label: "About", href: "#about" },
@@ -30,10 +31,23 @@ const Navbar = () => {
   const accent = useColorModeValue("blue.500", "green.400");
   const linkColor = useColorModeValue("gray.600", "gray.300");
   const { isOpen, onToggle, onClose } = useDisclosure();
+  const navRef = useRef<HTMLElement>(null);
+
+  useEffect(() => {
+    if (!isOpen) return;
+    const handleClick = (e: MouseEvent) => {
+      if (navRef.current && !navRef.current.contains(e.target as Node)) {
+        onClose();
+      }
+    };
+    document.addEventListener("mousedown", handleClick);
+    return () => document.removeEventListener("mousedown", handleClick);
+  }, [isOpen, onClose]);
 
   return (
     <Box
       as="nav"
+      ref={navRef}
       position="fixed"
       top={0}
       left={0}

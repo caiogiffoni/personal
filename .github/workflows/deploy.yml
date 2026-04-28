@@ -9,6 +9,9 @@ on:
 jobs:
   deploy:
     runs-on: ubuntu-latest
+    env:
+      CF_DIST_1: ${{ secrets.CLOUDFRONT_DISTRIBUTION_ID_1 }}
+      CF_DIST_2: ${{ secrets.CLOUDFRONT_DISTRIBUTION_ID_2 }}
 
     steps:
       - name: Checkout code
@@ -48,14 +51,14 @@ jobs:
             --content-type "text/html"
 
       - name: Invalidate CloudFront cache (distribution 1)
-        if: ${{ secrets.CLOUDFRONT_DISTRIBUTION_ID_1 != '' }}
+        if: ${{ env.CF_DIST_1 != '' }}
         run: |
           aws cloudfront create-invalidation \
             --distribution-id ${{ secrets.CLOUDFRONT_DISTRIBUTION_ID_1 }} \
             --paths "/*"
 
       - name: Invalidate CloudFront cache (distribution 2)
-        if: ${{ secrets.CLOUDFRONT_DISTRIBUTION_ID_2 != '' }}
+        if: ${{ env.CF_DIST_2 != '' }}
         run: |
           aws cloudfront create-invalidation \
             --distribution-id ${{ secrets.CLOUDFRONT_DISTRIBUTION_ID_2 }} \

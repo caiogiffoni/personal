@@ -6,6 +6,7 @@ import About from "./components/About";
 import Timeline from "./components/Timeline";
 import Skills from "./components/Skills";
 import Contact from "./components/Contact";
+import Recommendations from "./components/Recommendations";
 import Footer from "./components/Footer";
 import ScrollToTop from "./components/ScrollToTop";
 
@@ -20,6 +21,7 @@ function App() {
         <Timeline />
         {/* <Projects /> */}
         <Skills />
+        <Recommendations />
         <Contact />
       </Box>
       <Footer />

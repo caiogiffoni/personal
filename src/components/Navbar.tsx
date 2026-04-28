@@ -8,15 +8,18 @@ import {
   HStack,
   Link,
   Icon,
-  useBreakpointValue,
+  VStack,
+  useDisclosure,
 } from "@chakra-ui/react";
-import { FaGithub, FaLinkedin, FaMoon, FaSun } from "react-icons/fa";
+import { FaGithub, FaLinkedin, FaMoon, FaSun, FaBars, FaTimes } from "react-icons/fa";
+import { AnimatePresence } from "framer-motion";
+import { MotionBox } from "../lib/motion";
 import CONFIG from "../config/config";
 
 const navLinks = [
   { label: "About", href: "#about" },
   { label: "Journey", href: "#journey" },
-  // { label: "Projects", href: "#projects" },
+  { label: "Skills", href: "#skills" },
   { label: "Contact", href: "#contact" },
 ];
 
@@ -25,7 +28,7 @@ const Navbar = () => {
   const bg = useColorModeValue("#e2e2e2", "#212121");
   const accent = useColorModeValue("blue.500", "green.400");
   const linkColor = useColorModeValue("gray.600", "gray.300");
-  const showLinks = useBreakpointValue({ base: false, md: true });
+  const { isOpen, onToggle, onClose } = useDisclosure();
 
   return (
     <Box
@@ -36,18 +39,24 @@ const Navbar = () => {
       right={0}
       zIndex={100}
       bg={bg}
-      px={{ base: 5, md: 10 }}
-      py={3}
       boxShadow="sm"
     >
-      <Flex justify="space-between" align="center" maxW="1100px" mx="auto">
+      <Flex
+        justify="space-between"
+        align="center"
+        maxW="1100px"
+        mx="auto"
+        px={{ base: 5, md: 10 }}
+        py={3}
+      >
         <Text fontWeight="700" fontSize="lg" color={accent} fontFamily="mono">
           caiogiffoni
         </Text>
 
         <HStack spacing={{ base: 2, md: 6 }}>
-          {showLinks &&
-            navLinks.map(({ label, href }) => (
+          {/* Desktop links */}
+          <HStack spacing={6} display={{ base: "none", md: "flex" }}>
+            {navLinks.map(({ label, href }) => (
               <Link
                 key={label}
                 href={href}
@@ -59,6 +68,7 @@ const Navbar = () => {
                 {label}
               </Link>
             ))}
+          </HStack>
 
           <HStack spacing={1}>
             <Link href={CONFIG.GITHUB} isExternal>
@@ -84,9 +94,61 @@ const Navbar = () => {
               variant="ghost"
               size="sm"
             />
+            {/* Hamburger — mobile only */}
+            <IconButton
+              aria-label={isOpen ? "Close menu" : "Open menu"}
+              icon={<Icon as={isOpen ? FaTimes : FaBars} />}
+              onClick={onToggle}
+              variant="ghost"
+              size="sm"
+              display={{ base: "flex", md: "none" }}
+            />
           </HStack>
         </HStack>
       </Flex>
+
+      {/* Mobile dropdown */}
+      <AnimatePresence>
+        {isOpen && (
+          <MotionBox
+            key="mobile-menu"
+            initial={{ opacity: 0, height: 0 }}
+            animate={{ opacity: 1, height: "auto" }}
+            exit={{ opacity: 0, height: 0 }}
+            transition={{ duration: 0.2, ease: "easeInOut" }}
+            overflow="hidden"
+            display={{ base: "block", md: "none" }}
+            bg={bg}
+            borderTop="1px solid"
+            borderColor={useColorModeValue("gray.300", "gray.700")}
+          >
+            <VStack
+              align="stretch"
+              spacing={0}
+              px={5}
+              py={3}
+            >
+              {navLinks.map(({ label, href }) => (
+                <Link
+                  key={label}
+                  href={href}
+                  onClick={onClose}
+                  py={3}
+                  fontSize="md"
+                  fontWeight="500"
+                  color={linkColor}
+                  _hover={{ color: accent, textDecoration: "none" }}
+                  borderBottom="1px solid"
+                  borderColor={useColorModeValue("gray.200", "gray.800")}
+                  _last={{ borderBottom: "none" }}
+                >
+                  {label}
+                </Link>
+              ))}
+            </VStack>
+          </MotionBox>
+        )}
+      </AnimatePresence>
     </Box>
   );
 };

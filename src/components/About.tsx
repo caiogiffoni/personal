@@ -13,7 +13,7 @@ import {
 import { FaHeart } from "react-icons/fa";
 import { MotionBox, MotionFlex } from "../lib/motion";
 import SectionHeader from "./SectionHeader";
-import caio from "../config/caio2.png";
+import caio from "../assets/caio2.png";
 
 const quickFacts = ["São Paulo, Brazil", "Open to remote", "English - Fluent"];
 

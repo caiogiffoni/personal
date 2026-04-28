@@ -9,10 +9,8 @@ import {
   Icon,
   useColorModeValue,
 } from '@chakra-ui/react'
-import { motion } from 'framer-motion'
 import { TimelineEvent, categoryConfig } from '../data/timeline'
-
-const MotionBox = motion(Box)
+import { MotionBox } from '../lib/motion'
 
 type Props = {
   event: TimelineEvent
@@ -22,14 +20,13 @@ type Props = {
 const Card = ({ event }: { event: TimelineEvent }) => {
   const { color } = categoryConfig[event.category]
   const colorScheme = color.split('.')[0]
-  const cardBg = useColorModeValue('white', '#252525')
   const borderColor = useColorModeValue('gray.200', 'gray.700')
   const subColor = useColorModeValue('gray.600', 'gray.400')
   const periodColor = useColorModeValue('gray.400', 'gray.500')
 
   return (
     <Box
-      bg={cardBg}
+      bg="card-bg"
       border="1px solid"
       borderColor={event.featured ? color : borderColor}
       borderRadius="xl"
@@ -78,12 +75,8 @@ const Card = ({ event }: { event: TimelineEvent }) => {
         <VStack align="flex-start" spacing={1.5} mb={3}>
           {event.highlights.map((h) => (
             <HStack key={h} align="flex-start" spacing={2}>
-              <Text color={color} mt="3px" flexShrink={0} fontSize="xs" lineHeight={1}>
-                ▸
-              </Text>
-              <Text fontSize="sm" color={subColor} lineHeight="1.6">
-                {h}
-              </Text>
+              <Text color={color} mt="3px" flexShrink={0} fontSize="xs" lineHeight={1}>▸</Text>
+              <Text fontSize="sm" color={subColor} lineHeight="1.6">{h}</Text>
             </HStack>
           ))}
         </VStack>
@@ -92,15 +85,7 @@ const Card = ({ event }: { event: TimelineEvent }) => {
       {event.tech && (
         <Flex flexWrap="wrap" gap={1.5}>
           {event.tech.map((t) => (
-            <Badge
-              key={t}
-              colorScheme={colorScheme}
-              variant="subtle"
-              fontSize="2xs"
-              px={2}
-              py={0.5}
-              borderRadius="sm"
-            >
+            <Badge key={t} colorScheme={colorScheme} variant="subtle" fontSize="2xs" px={2} py={0.5} borderRadius="sm">
               {t}
             </Badge>
           ))}
@@ -112,12 +97,10 @@ const Card = ({ event }: { event: TimelineEvent }) => {
 
 const TimelineItem = ({ event, index }: Props) => {
   const { color, icon } = categoryConfig[event.category]
-  const dotBorderColor = useColorModeValue('white', '#1a1a1a')
   const isLeft = index % 2 === 0
 
   return (
     <Box w="full" position="relative">
-      {/* Dot — centered on the line */}
       <Box
         position="absolute"
         left={{ base: '10px', md: '50%' }}
@@ -128,7 +111,7 @@ const TimelineItem = ({ event, index }: Props) => {
         borderRadius="full"
         bg={color}
         border="3px solid"
-        borderColor={dotBorderColor}
+        borderColor="dot-border"
         display="flex"
         alignItems="center"
         justifyContent="center"
@@ -139,7 +122,6 @@ const TimelineItem = ({ event, index }: Props) => {
         <Icon as={icon} />
       </Box>
 
-      {/* Card — on mobile always offset right; on desktop alternate sides */}
       <Flex
         pl={{ base: '52px', md: 0 }}
         justify={{ base: 'flex-start', md: isLeft ? 'flex-start' : 'flex-end' }}

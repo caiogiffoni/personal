@@ -12,152 +12,130 @@ import {
   Link,
   useColorModeValue,
 } from '@chakra-ui/react'
-import { motion } from 'framer-motion'
 import { FaGithub, FaExternalLinkAlt, FaBriefcase, FaUser } from 'react-icons/fa'
+import { MotionBox } from '../lib/motion'
 import { projects } from '../data/projects'
-
-const MotionBox = motion(Box)
+import SectionHeader from './SectionHeader'
 
 const Projects = () => {
   const accent = useColorModeValue('blue.500', 'green.400')
   const subColor = useColorModeValue('gray.600', 'gray.400')
-  const cardBg = useColorModeValue('white', '#252525')
   const borderColor = useColorModeValue('gray.200', 'gray.700')
   const labelColor = useColorModeValue('gray.400', 'gray.500')
+  const impactBg = useColorModeValue('green.50', 'rgba(72,187,120,0.08)')
 
   return (
     <Box as="section" id="projects" py={{ base: 20, md: 28 }} px={{ base: 5, md: 10 }}>
       <Container maxW="1000px">
         <VStack spacing={{ base: 12, md: 16 }}>
-          <VStack spacing={3} textAlign="center">
-            <Text color={accent} fontFamily="mono" fontSize="sm">
-              {"// what I've built"}
-            </Text>
-            <Heading fontSize={{ base: '3xl', md: '4xl' }} fontWeight="700">
-              Work & Projects
-            </Heading>
-            <Text color={subColor} maxW="500px" fontSize="md" lineHeight="1.8">
-              A mix of professional case studies and personal projects — focused on automation,
-              AI, and full-stack development.
-            </Text>
-          </VStack>
+          <SectionHeader
+            tag={"// what I've built"}
+            title="Work & Projects"
+            subtitle="A mix of professional case studies and personal projects — focused on automation, AI, and full-stack development."
+          />
 
           <SimpleGrid columns={{ base: 1, md: 2 }} spacing={6} w="full">
-            {projects.map((project, i) => {
-              const isProfessional = project.type === 'professional'
-              return (
-                <MotionBox
-                  key={project.title}
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true, margin: '-40px' }}
-                  transition={{ duration: 0.45, delay: i * 0.08 }}
+            {projects.map((project, i) => (
+              <MotionBox
+                key={project.title}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, margin: '-40px' }}
+                transition={{ duration: 0.45, delay: i * 0.08 }}
+                h="full"
+              >
+                <Box
+                  bg="card-bg"
+                  border="1px solid"
+                  borderColor={borderColor}
+                  borderRadius="xl"
+                  p={6}
                   h="full"
+                  display="flex"
+                  flexDirection="column"
+                  gap={4}
                 >
-                  <Box
-                    bg={cardBg}
-                    border="1px solid"
-                    borderColor={borderColor}
-                    borderRadius="xl"
-                    p={6}
-                    h="full"
-                    display="flex"
-                    flexDirection="column"
-                    gap={4}
-                  >
-                    {/* Header */}
-                    <Flex justify="space-between" align="flex-start">
-                      <VStack align="flex-start" spacing={0.5}>
-                        <HStack spacing={2}>
-                          <Icon
-                            as={isProfessional ? FaBriefcase : FaUser}
-                            fontSize="xs"
-                            color={labelColor}
-                          />
-                          <Text fontSize="xs" color={labelColor} fontFamily="mono">
-                            {project.company}
-                          </Text>
-                        </HStack>
-                        <Heading as="h3" fontSize="md" fontWeight="700" lineHeight="1.3">
-                          {project.title}
-                        </Heading>
-                      </VStack>
-
-                      <HStack spacing={2} flexShrink={0} ml={3}>
-                        {project.githubUrl && (
-                          <Link href={project.githubUrl} isExternal>
-                            <Icon as={FaGithub} color={subColor} _hover={{ color: accent }} />
-                          </Link>
-                        )}
-                        {project.liveUrl && (
-                          <Link href={project.liveUrl} isExternal>
-                            <Icon as={FaExternalLinkAlt} color={subColor} _hover={{ color: accent }} fontSize="xs" />
-                          </Link>
-                        )}
+                  <Flex justify="space-between" align="flex-start">
+                    <VStack align="flex-start" spacing={0.5}>
+                      <HStack spacing={2}>
+                        <Icon
+                          as={project.type === 'professional' ? FaBriefcase : FaUser}
+                          fontSize="xs"
+                          color={labelColor}
+                        />
+                        <Text fontSize="xs" color={labelColor} fontFamily="mono">
+                          {project.company}
+                        </Text>
                       </HStack>
-                    </Flex>
-
-                    {/* Content */}
-                    <VStack align="flex-start" spacing={3} flex={1}>
-                      {project.problem && (
-                        <Box>
-                          <Text fontSize="xs" color={labelColor} fontWeight="600" textTransform="uppercase" letterSpacing="wide" mb={1}>
-                            Problem
-                          </Text>
-                          <Text fontSize="sm" color={subColor} lineHeight="1.7">
-                            {project.problem}
-                          </Text>
-                        </Box>
-                      )}
-
-                      <Box>
-                        <Text fontSize="xs" color={labelColor} fontWeight="600" textTransform="uppercase" letterSpacing="wide" mb={1}>
-                          {project.problem ? 'Solution' : 'What I built'}
-                        </Text>
-                        <Text fontSize="sm" color={subColor} lineHeight="1.7">
-                          {project.solution}
-                        </Text>
-                      </Box>
-
-                      {project.impact && (
-                        <Box
-                          bg={useColorModeValue('green.50', 'rgba(72,187,120,0.08)')}
-                          borderLeft="3px solid"
-                          borderColor="green.400"
-                          borderRadius="sm"
-                          px={3}
-                          py={2}
-                        >
-                          <Text fontSize="xs" color={labelColor} fontWeight="600" textTransform="uppercase" letterSpacing="wide" mb={0.5}>
-                            Impact
-                          </Text>
-                          <Text fontSize="sm" color={subColor} lineHeight="1.6">
-                            {project.impact}
-                          </Text>
-                        </Box>
-                      )}
+                      <Heading as="h3" fontSize="md" fontWeight="700" lineHeight="1.3">
+                        {project.title}
+                      </Heading>
                     </VStack>
 
-                    {/* Tech */}
-                    <Flex flexWrap="wrap" gap={1.5} mt="auto">
-                      {project.tech.map((t) => (
-                        <Badge
-                          key={t}
-                          colorScheme="green"
-                          variant="subtle"
-                          fontSize="2xs"
-                          px={2}
-                          py={0.5}
-                          borderRadius="sm"
-                        >
-                          {t}
-                        </Badge>
-                      ))}
-                    </Flex>
-                  </Box>
-                </MotionBox>
-              )
-            })}
+                    <HStack spacing={2} flexShrink={0} ml={3}>
+                      {project.githubUrl && (
+                        <Link href={project.githubUrl} isExternal>
+                          <Icon as={FaGithub} color={subColor} _hover={{ color: accent }} />
+                        </Link>
+                      )}
+                      {project.liveUrl && (
+                        <Link href={project.liveUrl} isExternal>
+                          <Icon as={FaExternalLinkAlt} color={subColor} _hover={{ color: accent }} fontSize="xs" />
+                        </Link>
+                      )}
+                    </HStack>
+                  </Flex>
+
+                  <VStack align="flex-start" spacing={3} flex={1}>
+                    {project.problem && (
+                      <Box>
+                        <Text fontSize="xs" color={labelColor} fontWeight="600" textTransform="uppercase" letterSpacing="wide" mb={1}>
+                          Problem
+                        </Text>
+                        <Text fontSize="sm" color={subColor} lineHeight="1.7">
+                          {project.problem}
+                        </Text>
+                      </Box>
+                    )}
+
+                    <Box>
+                      <Text fontSize="xs" color={labelColor} fontWeight="600" textTransform="uppercase" letterSpacing="wide" mb={1}>
+                        {project.problem ? 'Solution' : 'What I built'}
+                      </Text>
+                      <Text fontSize="sm" color={subColor} lineHeight="1.7">
+                        {project.solution}
+                      </Text>
+                    </Box>
+
+                    {project.impact && (
+                      <Box
+                        bg={impactBg}
+                        borderLeft="3px solid"
+                        borderColor="green.400"
+                        borderRadius="sm"
+                        px={3}
+                        py={2}
+                      >
+                        <Text fontSize="xs" color={labelColor} fontWeight="600" textTransform="uppercase" letterSpacing="wide" mb={0.5}>
+                          Impact
+                        </Text>
+                        <Text fontSize="sm" color={subColor} lineHeight="1.6">
+                          {project.impact}
+                        </Text>
+                      </Box>
+                    )}
+                  </VStack>
+
+                  <Flex flexWrap="wrap" gap={1.5} mt="auto">
+                    {project.tech.map((t) => (
+                      <Badge key={t} colorScheme="green" variant="subtle" fontSize="2xs" px={2} py={0.5} borderRadius="sm">
+                        {t}
+                      </Badge>
+                    ))}
+                  </Flex>
+                </Box>
+              </MotionBox>
+            ))}
           </SimpleGrid>
         </VStack>
       </Container>

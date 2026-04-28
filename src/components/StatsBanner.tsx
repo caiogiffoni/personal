@@ -1,14 +1,5 @@
-import {
-  Box,
-  Container,
-  SimpleGrid,
-  Text,
-  Heading,
-  useColorModeValue,
-} from '@chakra-ui/react'
-import { motion } from 'framer-motion'
-
-const MotionBox = motion(Box)
+import { Box, Container, SimpleGrid, Text, Heading, useColorModeValue } from '@chakra-ui/react'
+import { MotionBox } from '../lib/motion'
 
 const stats = [
   { value: '60 days', label: 'billing backlog eliminated', sub: '→ near real-time' },
@@ -20,7 +11,6 @@ const stats = [
 
 const StatsBanner = () => {
   const bg = useColorModeValue('gray.900', '#111111')
-  const accent = useColorModeValue('green.400', 'green.400')
 
   return (
     <Box bg={bg} py={{ base: 10, md: 14 }} px={{ base: 5, md: 10 }}>
@@ -35,7 +25,7 @@ const StatsBanner = () => {
               transition={{ duration: 0.4, delay: i * 0.08 }}
               textAlign="center"
             >
-              <Heading fontSize={{ base: '2xl', md: '3xl' }} color={accent} fontWeight="800" fontFamily="mono">
+              <Heading fontSize={{ base: '2xl', md: '3xl' }} color="green.400" fontWeight="800" fontFamily="mono">
                 {stat.value}
               </Heading>
               <Text fontSize="sm" color="gray.300" mt={1} lineHeight="1.4">

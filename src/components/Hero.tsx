@@ -87,6 +87,7 @@ const Hero = () => {
                 { label: "AI Agents", scheme: "green" },
                 { label: "Full Stack", scheme: "purple" },
                 { label: "Open to remote", scheme: "gray" },
+                { label: "EU Citizen", scheme: "blue" },
               ].map(({ label, scheme }) => (
                 <Badge
                   key={label}

@@ -13,6 +13,7 @@ import {
 import { FaHeart } from "react-icons/fa";
 import { MotionBox, MotionFlex } from "../lib/motion";
 import SectionHeader from "./SectionHeader";
+import caio from "../config/caio2.png";
 
 const quickFacts = ["São Paulo, Brazil", "Open to remote", "English - Fluent"];
 
@@ -47,12 +48,13 @@ const About = () => {
                 borderRadius="2xl"
                 overflow="hidden"
                 border="3px solid"
+                bgColor={accent}
                 borderColor={accent}
-                w={{ base: "160px", md: "200px" }}
-                h={{ base: "160px", md: "200px" }}
+                w={{ base: "160px", md: "220px" }}
+                h={{ base: "160px", md: "300px" }}
               >
                 <Avatar
-                  src="/photo.jpg"
+                  src={caio}
                   name="Caio Giffoni"
                   w="full"
                   h="full"

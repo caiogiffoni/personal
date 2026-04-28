@@ -22,7 +22,7 @@ export const skillGroups: SkillGroup[] = [
   },
   {
     label: 'Data & Databases',
-    skills: ['PostgreSQL', 'SQL', 'NoSQL', 'Prisma', 'TypeORM', 'pandas'],
+    skills: ['PostgreSQL', 'SQL', 'NoSQL', 'pandas'],
     color: 'purple.400',
   },
   {

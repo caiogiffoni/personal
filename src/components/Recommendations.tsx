@@ -31,9 +31,16 @@ const recommendations: Recommendation[] = [
       "I had the opportunity to work closely with Caio at Thoughtful AI on a year-long client engagement focused on reconciling payments across three separate (and often unsynchronized) systems. It was a complex engagement within a highly legacy environment, and Caio played a central role in driving it forward. He led development across multiple AI agent workflows, delivering meaningful automation in a space that typically relies heavily on manual effort. What stood out most was his approach to client engagement - Caio was highly responsive, consistently available, and proactive in his communication. He built strong trust with stakeholders by quickly addressing questions, providing clear updates, and maintaining momentum even when challenges arose. Beyond his technical leadership, Caio is a great teammate - reliable, thoughtful, and enjoyable to work with. I'd highly recommend Caio to any organization looking for someone who brings both strong technical execution and exceptional client engagement.",
   },
   {
+    name: "Igor Matheus",
+    title: "Forward Deployed Engineer",
+    context: "Same team at Thoughtful AI · April 2026",
+    quote:
+      "I had the opportunity to work with Caio on an ongoing project, and he quickly stood out for his dedication and willingness to dive deep into the details. Even joining with a significant amount of existing context and complexity, he was able to ramp up quickly, understand how everything worked, and deliver solid contributions in a short amount of time. Caio is also very easy to work with, approachable, collaborative, and always brings a positive attitude to the team. I would gladly recommend him to any team seeking a reliable, committed software engineer.",
+  },
+  {
     name: "Bill Piazzetta",
     title: "Automation & RPA Engineer, Thoughtful AI",
-    context: "Same team at Thoughtful AI · April 2026",
+    context: "Same team at Thoughtful AI · November 2026",
     quote:
       "Caio started working at Thoughtful some time after I'd joined and quickly showed what a dedicated, hard-working and talented professional he is, which led to him soon being tasked with more and more responsibility within the project we were working on. He is supportive and a real team player; I could always count on him whenever I needed help, even when working on separate projects.",
   },

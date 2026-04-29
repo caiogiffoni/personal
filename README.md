@@ -5,9 +5,9 @@ Personal portfolio site built with React, TypeScript, and Vite. Deployed to AWS 
 ## Stack
 
 - **React 18** + **TypeScript**
-- **Vite** — build tooling
-- **Chakra UI** — component library, dark mode by default
-- **Framer Motion** — animations
+- **Vite** - build tooling
+- **Chakra UI** - component library, dark mode by default
+- **Framer Motion** - animations
 
 ## Getting started
 
@@ -28,9 +28,9 @@ npm run dev
 
 All page content is in `src/data/` — plain TypeScript files, no CMS or API:
 
-- `timeline.ts` — career and education history
-- `skills.ts` — skill groups
-- `projects.ts` — projects (currently not rendered)
+- `timeline.ts` - career and education history
+- `skills.ts` - skill groups
+- `projects.ts` - projects (currently not rendered)
 
 External links (LinkedIn, GitHub, CV) are in `src/config/config.ts`.
 

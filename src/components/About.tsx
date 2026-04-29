@@ -42,7 +42,6 @@ const About = () => {
             viewport={{ once: true }}
             transition={{ duration: 0.5 }}
           >
-            {/* Photo — drop your photo at public/photo.jpg to replace the initials avatar */}
             <Box flexShrink={0}>
               <Box
                 borderRadius="2xl"

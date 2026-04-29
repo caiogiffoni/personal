@@ -31,7 +31,7 @@ export const projects: Project[] = [
     solution:
       "Built an agent that composes and submits appeals automatically, then monitors payer timelines and triggers escalation when reviewers exceed expected windows.",
     impact:
-      "Reduced appeal submission time by 2 months. Proactive follow-up automation turned a reactive process into a data-driven one.",
+      "Reduced appeal submission time by 4 months. Proactive follow-up automation turned a reactive process into a data-driven one.",
     tech: ["Python", "RPA", "AWS", "Robocorp"],
     type: "professional",
   },

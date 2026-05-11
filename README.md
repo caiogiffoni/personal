@@ -37,6 +37,8 @@ External links (LinkedIn, GitHub, CV) are in `src/config/config.ts`.
 ## Backlog
 
 - [ ] Portuguese (PT-BR) language toggle
+- [ ] When i hover over a button, it should increase the size
+- [ ] Add project section
 - [x] [MOBILE] When the Hamb menu is open, if i click outside of it, it should close
 
 ## Deployment

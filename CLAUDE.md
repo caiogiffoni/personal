@@ -17,10 +17,18 @@ There are no tests or linting configured. TypeScript strict mode (`strict`, `noU
 Single-page personal portfolio. No routing — the page is one vertical scroll of sections rendered in `src/App.tsx`:
 
 ```
-Hero → StatsBanner → About → Timeline → Skills → Contact
+Navbar → Hero → StatsBanner → About → Timeline → Skills → Recommendations → Contact → Footer
 ```
 
 (`Projects` is commented out in `App.tsx`.)
+
+Additional UI components:
+- `Navbar` — top navigation bar
+- `Footer` — page footer
+- `ScrollToTop` — floating button to scroll back to top
+- `SectionHeader` — reusable section heading
+- `TimelineItem` — individual timeline entry
+- `Recommendations` — testimonials/recommendations section
 
 ### Data layer — `src/data/`
 
@@ -32,7 +40,7 @@ All page content lives in plain TypeScript files, not fetched from any API:
 
 **To update content, edit the data files only.** Components consume these arrays directly.
 
-### Config — `src/config/config.tsx`
+### Config — `src/config/config.ts`
 
 External links (LinkedIn, GitHub, CV). Import `CONFIG` from here rather than hardcoding URLs in components.
 

@@ -28,11 +28,20 @@ npm run dev
 
 All page content is in `src/data/` — plain TypeScript files, no CMS or API:
 
-- `timeline.ts` - career and education history
+- `timeline.ts` - career and education history (categories: `engineering`, `education`, `software`, `ai`, `teaching`, `certification`)
 - `skills.ts` - skill groups
 - `projects.ts` - projects (currently not rendered)
 
 External links (LinkedIn, GitHub, CV) are in `src/config/config.ts`.
+
+## Sections
+
+```
+Navbar → Hero → StatsBanner → About → Timeline → Skills → Recommendations → Contact → Footer
+```
+
+- `Projects` is commented out in `App.tsx`
+- `ScrollToTop` renders as a floating button outside the main flow
 
 ## Backlog
 

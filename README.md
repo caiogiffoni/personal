@@ -39,6 +39,7 @@ External links (LinkedIn, GitHub, CV) are in `src/config/config.ts`.
 - [ ] Portuguese (PT-BR) language toggle
 - [ ] When i hover over a button, it should increase the size
 - [ ] Add project section
+- [ ] Add a anchor to linkedin in the recommedations section
 - [x] [MOBILE] When the Hamb menu is open, if i click outside of it, it should close
 
 ## Deployment

@@ -2,9 +2,18 @@ import { Box, Container, VStack, useColorModeValue } from "@chakra-ui/react";
 import { timelineEvents } from "../data/timeline";
 import SectionHeader from "./SectionHeader";
 import TimelineItem from "./TimelineItem";
+import { useLanguage } from "../context/LanguageContext";
+import { translations } from "../i18n/translations";
 
 const Timeline = () => {
   const lineColor = useColorModeValue("gray.300", "gray.700");
+  const { lang } = useLanguage();
+  const t = translations[lang].timeline;
+
+  const events = timelineEvents.map((e) => ({
+    ...e,
+    ...(t.eventTexts[e.id] ?? {}),
+  }));
 
   return (
     <Box
@@ -16,9 +25,9 @@ const Timeline = () => {
       <Container maxW="1000px">
         <VStack spacing={{ base: 14, md: 20 }}>
           <SectionHeader
-            tag="// my story"
-            title="The Journey"
-            subtitle="From R$40M construction sites to software - not the obvious path, but exactly the right one."
+            tag={t.tag}
+            title={t.title}
+            subtitle={t.subtitle}
           />
 
           <Box position="relative" w="full">
@@ -32,7 +41,7 @@ const Timeline = () => {
               transform={{ md: "translateX(-50%)" }}
             />
             <VStack spacing={{ base: 6, md: 8 }} align="stretch">
-              {timelineEvents.map((event, index) => (
+              {events.map((event, index) => (
                 <TimelineItem key={event.id} event={event} index={index} />
               ))}
             </VStack>

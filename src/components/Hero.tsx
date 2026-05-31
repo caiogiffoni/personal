@@ -14,6 +14,8 @@ import {
 import { motion } from "framer-motion";
 import { FaGithub, FaLinkedin, FaDownload } from "react-icons/fa";
 import CONFIG from "../config/config";
+import { useLanguage } from "../context/LanguageContext";
+import { translations } from "../i18n/translations";
 
 const MotionBox = motion(Box);
 
@@ -26,6 +28,8 @@ const fadeUp = (delay: number) => ({
 const Hero = () => {
   const accent = useColorModeValue("blue.500", "green.400");
   const subColor = useColorModeValue("gray.600", "gray.400");
+  const { lang } = useLanguage();
+  const t = translations[lang].hero;
 
   return (
     <Box
@@ -61,7 +65,7 @@ const Hero = () => {
               fontWeight="400"
               color={subColor}
             >
-              Software Developer
+              {t.role}
             </Heading>
           </MotionBox>
 
@@ -71,24 +75,13 @@ const Hero = () => {
               color={subColor}
               lineHeight="1.85"
             >
-              Former civil engineer turned software developer. I help companies
-              automate processes, cut operational costs, and build the software
-              they actually need. From internal tools to production systems. 4+
-              years turning complex problems into clean, scalable solutions
+              {t.description}
             </Text>
           </MotionBox>
 
           <MotionBox {...fadeUp(0.45)}>
             <HStack spacing={2} flexWrap="wrap" rowGap={2}>
-              {[
-                { label: "Python", scheme: "blue" },
-                { label: "React", scheme: "cyan" },
-                { label: "AWS Certified", scheme: "orange" },
-                { label: "AI Agents", scheme: "green" },
-                { label: "Full Stack", scheme: "purple" },
-                { label: "Open to remote", scheme: "gray" },
-                { label: "EU Citizen", scheme: "blue" },
-              ].map(({ label, scheme }) => (
+              {t.badges.map(({ label, scheme }) => (
                 <Badge
                   key={label}
                   colorScheme={scheme}
@@ -136,7 +129,7 @@ const Hero = () => {
                 variant="ghost"
                 size="md"
               >
-                Download CV
+                {t.downloadCv}
               </Button>
             </HStack>
           </MotionBox>

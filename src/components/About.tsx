@@ -14,12 +14,14 @@ import { FaHeart } from "react-icons/fa";
 import { MotionBox, MotionFlex } from "../lib/motion";
 import SectionHeader from "./SectionHeader";
 import caio from "../assets/caio2.png";
-
-const quickFacts = ["São Paulo, Brazil", "Open to remote", "English - Fluent"];
+import { useLanguage } from "../context/LanguageContext";
+import { translations } from "../i18n/translations";
 
 const About = () => {
   const accent = useColorModeValue("blue.500", "green.400");
   const subColor = useColorModeValue("gray.600", "gray.400");
+  const { lang } = useLanguage();
+  const t = translations[lang].about;
 
   return (
     <Box
@@ -31,7 +33,7 @@ const About = () => {
     >
       <Container maxW="1000px">
         <VStack spacing={{ base: 12, md: 16 }}>
-          <SectionHeader tag="// who I am" title="About Me" />
+          <SectionHeader tag={t.tag} title={t.title} />
 
           <MotionFlex
             direction={{ base: "column", md: "row" }}
@@ -69,27 +71,18 @@ const About = () => {
                 color={subColor}
                 lineHeight="1.85"
               >
-                I started my career managing construction projects worth tens of
-                millions of dollars - coordinating teams, deadlines, and solving
-                problems. In 2021, I made a bet on myself and transitioned into
-                software. Best decision I've made. That background in
-                engineering and getting things built is still at the core of how
-                I work.
+                {t.p1}
               </Text>
               <Text
                 fontSize={{ base: "md", md: "lg" }}
                 color={subColor}
                 lineHeight="1.85"
               >
-                Today I build software that helps companies automate the slow,
-                expensive, manual stuff. I'm drawn to problems where a
-                well-designed system can save a team months of work and I care a
-                lot about getting the details right, because in the kind of
-                workflows I work on, the details are what make or break it.
+                {t.p2}
               </Text>
 
               <HStack flexWrap="wrap" gap={3} pt={1}>
-                {quickFacts.map((label) => (
+                {t.quickFacts.map((label) => (
                   <Badge
                     key={label}
                     colorScheme="green"
@@ -124,7 +117,7 @@ const About = () => {
               <HStack spacing={2} mb={2}>
                 <Icon as={FaHeart} color="red.400" />
                 <Text fontWeight="600" fontSize="sm">
-                  Volunteer Work
+                  {t.volunteerTitle}
                 </Text>
               </HStack>
               <Text fontSize="sm" color={subColor} lineHeight="1.75">
@@ -133,9 +126,7 @@ const About = () => {
                     Data Analyst - Cactus NGO.{"  "}
                   </Link>
                 </Text>
-                Contributed data analysis work to support the NGO's operations
-                and decision-making. Applying technical skills to social impact
-                outside of paid work.
+                {t.volunteerText}
               </Text>
             </Box>
           </MotionBox>

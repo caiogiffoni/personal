@@ -9,9 +9,11 @@ import Contact from "./components/Contact";
 import Recommendations from "./components/Recommendations";
 import Footer from "./components/Footer";
 import ScrollToTop from "./components/ScrollToTop";
+import { LanguageProvider } from "./context/LanguageContext";
 
 function App() {
   return (
+    <LanguageProvider>
     <Box>
       <Navbar />
       <Box as="main">
@@ -27,6 +29,7 @@ function App() {
       <Footer />
       <ScrollToTop />
     </Box>
+    </LanguageProvider>
   );
 }
 

@@ -11,22 +11,27 @@ import {
 import { MotionBox } from '../lib/motion'
 import { skillGroups } from '../data/skills'
 import SectionHeader from './SectionHeader'
+import { useLanguage } from '../context/LanguageContext'
+import { translations } from '../i18n/translations'
 
 const Skills = () => {
   const borderColor = useColorModeValue('gray.200', 'gray.700')
+  const { lang } = useLanguage()
+  const t = translations[lang].skills
+  const groups = skillGroups.map((g, i) => ({ ...g, label: t.groupLabels[i] }))
 
   return (
     <Box as="section" id="skills" bg="section-alt" py={{ base: 20, md: 28 }} px={{ base: 5, md: 10 }}>
       <Container maxW="1000px">
         <VStack spacing={{ base: 12, md: 16 }}>
           <SectionHeader
-            tag="// my tools"
-            title="Skills & Technologies"
-            subtitle="A toolkit built across construction, teaching, and product development."
+            tag={t.tag}
+            title={t.title}
+            subtitle={t.subtitle}
           />
 
           <SimpleGrid columns={{ base: 1, sm: 2, md: 3 }} spacing={5} w="full">
-            {skillGroups.map((group, i) => {
+            {groups.map((group, i) => {
               const colorScheme = group.color.split('.')[0]
               return (
                 <MotionBox

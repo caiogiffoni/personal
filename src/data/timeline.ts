@@ -82,7 +82,7 @@ export const timelineEvents: TimelineEvent[] = [
   },
   {
     id: "5",
-    period: "Nov 2019 - Jul 2021",
+    period: "Oct 2019 - Jul 2021",
     role: "Civil Engineer",
     organization: "City Hall",
     description:
@@ -146,8 +146,8 @@ export const timelineEvents: TimelineEvent[] = [
   {
     id: "11",
     period: "Sep 2024 - Apr 2026",
-    role: "Software Developer",
-    organization: "Thoughtful A.I.",
+    role: "Forward Deployed Engineer",
+    organization: "Thoughtful AI",
     description:
       "Building fully autonomous AI agents for healthcare Revenue Cycle Management, replacing manual billing work with agents that operate 24/7.",
     highlights: [
@@ -156,6 +156,7 @@ export const timelineEvents: TimelineEvent[] = [
       "Established automated testing strategies across agent workflows",
       "Mentored new engineers; supported global CI/CD delivery workflows",
       "Collaborated with cross-functional teams across LATAM and the US to develop and implement customized solutions aligned with business objectives",
+      "Engaged directly with healthcare provider clients through requirements gathering sessions, product demos, and onboarding calls, ensuring solutions were tailored to each customer's operational workflows",
     ],
     tech: ["Python", "RPA", "AWS", "Robocorp"],
     category: "ai",

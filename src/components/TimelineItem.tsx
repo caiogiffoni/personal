@@ -11,6 +11,8 @@ import {
 } from '@chakra-ui/react'
 import { TimelineEvent, categoryConfig } from '../data/timeline'
 import { MotionBox } from '../lib/motion'
+import { useLanguage } from '../context/LanguageContext'
+import { translations } from '../i18n/translations'
 
 type Props = {
   event: TimelineEvent
@@ -23,6 +25,8 @@ const Card = ({ event }: { event: TimelineEvent }) => {
   const borderColor = useColorModeValue('gray.200', 'gray.700')
   const subColor = useColorModeValue('gray.600', 'gray.400')
   const periodColor = useColorModeValue('gray.400', 'gray.500')
+  const { lang } = useLanguage()
+  const keyMomentLabel = translations[lang].timeline.keyMoment
 
   return (
     <Box
@@ -44,7 +48,7 @@ const Card = ({ event }: { event: TimelineEvent }) => {
           borderRadius="sm"
           px={2}
         >
-          key moment
+          {keyMomentLabel}
         </Badge>
       )}
 

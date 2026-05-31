@@ -1,16 +1,12 @@
 import { Box, Container, SimpleGrid, Text, Heading, useColorModeValue } from '@chakra-ui/react'
 import { MotionBox } from '../lib/motion'
-
-const stats = [
-  { value: '60 days', label: 'billing backlog eliminated', sub: '→ near real-time' },
-  { value: '90%',     label: 'client time saved',         sub: 'in order processing' },
-  { value: '50+',     label: 'students mentored',         sub: 'in web development' },
-  { value: '4+',      label: 'years in software',         sub: 'full-stack & AI' },
-  { value: '2×',      label: 'AWS certified',             sub: 'Developer & Practitioner' },
-]
+import { useLanguage } from '../context/LanguageContext'
+import { translations } from '../i18n/translations'
 
 const StatsBanner = () => {
   const bg = useColorModeValue('gray.900', '#111111')
+  const { lang } = useLanguage()
+  const stats = translations[lang].stats
 
   return (
     <Box bg={bg} py={{ base: 10, md: 14 }} px={{ base: 5, md: 10 }}>

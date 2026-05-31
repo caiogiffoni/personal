@@ -13,27 +13,15 @@ import {
 import { FaGithub, FaLinkedin, FaEnvelope } from "react-icons/fa";
 import SectionHeader from "./SectionHeader";
 import CONFIG from "../config/config";
-
-const lookingFor = [
-  {
-    label: "Role type",
-    value: "Backend, full-stack, or AI / automation-focused",
-  },
-  {
-    label: "Stack",
-    value: "Python primary - comfortable across the full stack",
-  },
-  {
-    label: "Team",
-    value: "Distributed, international teams where autonomy is expected",
-  },
-  { label: "Location", value: "Remote-first (São Paulo, Brazil - UTC-3)" },
-];
+import { useLanguage } from "../context/LanguageContext";
+import { translations } from "../i18n/translations";
 
 const Contact = () => {
   const subColor = useColorModeValue("gray.600", "gray.400");
   const borderColor = useColorModeValue("gray.200", "gray.700");
   const labelColor = useColorModeValue("gray.400", "gray.500");
+  const { lang } = useLanguage();
+  const t = translations[lang].contact;
 
   return (
     <Box
@@ -45,9 +33,9 @@ const Contact = () => {
       <Container maxW="800px">
         <VStack spacing={12}>
           <SectionHeader
-            tag="// get in touch"
-            title="Let's Connect"
-            subtitle="If you have a project in mind, want to work together, or just want to say hi, my inbox is always open."
+            tag={t.tag}
+            title={t.title}
+            subtitle={t.subtitle}
           />
 
           <Box w="full">
@@ -59,10 +47,10 @@ const Contact = () => {
               color="green.400"
               fontFamily="mono"
             >
-              {"// what I'm looking for"}
+              {t.lookingForTag}
             </Text>
             <SimpleGrid columns={{ base: 1, sm: 2 }} spacing={4}>
-              {lookingFor.map(({ label, value }) => (
+              {t.lookingFor.map(({ label, value }) => (
                 <Box
                   key={label}
                   bg="card-bg"
@@ -99,7 +87,7 @@ const Contact = () => {
               px={10}
               _hover={{ textDecoration: "none" }}
             >
-              Say Hello
+              {t.sayHello}
             </Button>
 
             <HStack spacing={6}>

@@ -14,6 +14,8 @@ import {
 import { FaQuoteLeft, FaChevronLeft, FaChevronRight } from "react-icons/fa";
 import { AnimatePresence, motion } from "framer-motion";
 import SectionHeader from "./SectionHeader";
+import { useLanguage } from "../context/LanguageContext";
+import { translations } from "../i18n/translations";
 
 type Recommendation = {
   name: string;
@@ -115,6 +117,8 @@ const Recommendations = () => {
   const [direction, setDirection] = useState(1);
   const itemsPerPage = useBreakpointValue({ base: 1, md: 2 }) ?? 2;
   const accent = useColorModeValue("blue.500", "green.400");
+  const { lang } = useLanguage();
+  const t = translations[lang].recommendations;
 
   const totalPages = Math.ceil(recommendations.length / itemsPerPage);
   const visible = recommendations.slice(
@@ -138,9 +142,9 @@ const Recommendations = () => {
       <Container maxW="1000px">
         <VStack spacing={{ base: 12, md: 16 }}>
           <SectionHeader
-            tag="// social proof"
-            title="Recommendations"
-            subtitle="What colleagues and collaborators say about working with me."
+            tag={t.tag}
+            title={t.title}
+            subtitle={t.subtitle}
           />
 
           <Box w="full">

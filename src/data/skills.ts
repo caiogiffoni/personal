@@ -27,7 +27,7 @@ export const skillGroups: SkillGroup[] = [
   },
   {
     label: "AI & Automation",
-    skills: ["RPA", "Robocorp", "Selenium", "AI Agents"],
+    skills: ["RPA", "Robocorp", "Selenium", "Playwright", "OpenAI API", "AI Agents"],
     color: "teal.400",
   },
   {

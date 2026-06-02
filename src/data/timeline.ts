@@ -90,6 +90,20 @@ export const timelineEvents: TimelineEvent[] = [
     category: "engineering",
   },
   {
+    id: "5b",
+    period: "2020 - 2022",
+    role: "Data Analyst Volunteer",
+    organization: "Associação Cactus",
+    description:
+      "Volunteered at a Brazilian non-profit supporting public school students through education programs across 62 cities. Analyzed engagement data from their learning platform to identify where students were abandoning courses mid-way, turning raw drop-off patterns into actionable insights.",
+    highlights: [
+      "Extracted and analyzed student progress data from the learning platform",
+      "Identified critical drop-off points in the learning journey",
+      "Findings directly shaped program structure decisions to reduce mid-course abandonment",
+    ],
+    category: "teaching",
+  },
+  {
     id: "6",
     period: "2021 - 2022",
     role: "Full Stack Web Development Bootcamp",

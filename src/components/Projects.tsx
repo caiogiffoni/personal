@@ -31,7 +31,7 @@ const Projects = () => {
           <SectionHeader
             tag={"// what I've built"}
             title="Work & Projects"
-            subtitle="A mix of professional case studies and personal projects — focused on automation, AI, and full-stack development."
+            subtitle="A mix of professional case studies and personal projects - focused on automation, AI, and full-stack development."
           />
 
           <SimpleGrid columns={{ base: 1, md: 2 }} spacing={6} w="full">

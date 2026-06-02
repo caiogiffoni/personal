@@ -11,7 +11,14 @@ import {
   VStack,
   useDisclosure,
 } from "@chakra-ui/react";
-import { FaGithub, FaLinkedin, FaMoon, FaSun, FaBars, FaTimes } from "react-icons/fa";
+import {
+  FaGithub,
+  FaLinkedin,
+  FaMoon,
+  FaSun,
+  FaBars,
+  FaTimes,
+} from "react-icons/fa";
 import { AnimatePresence } from "framer-motion";
 import { MotionBox } from "../lib/motion";
 import CONFIG from "../config/config";
@@ -19,7 +26,13 @@ import { useEffect, useRef } from "react";
 import { useLanguage } from "../context/LanguageContext";
 import { translations } from "../i18n/translations";
 
-const navHrefs = ["#about", "#journey", "#skills", "#recommendations", "#contact"];
+const navHrefs = [
+  "#about",
+  "#journey",
+  "#skills",
+  "#recommendations",
+  "#contact",
+];
 
 const Navbar = () => {
   const { toggleColorMode, colorMode } = useColorMode();
@@ -31,11 +44,11 @@ const Navbar = () => {
   const { lang, setLang } = useLanguage();
   const t = translations[lang];
   const navLinks = [
-    { label: t.nav.about,           href: navHrefs[0] },
-    { label: t.nav.journey,         href: navHrefs[1] },
-    { label: t.nav.skills,          href: navHrefs[2] },
+    { label: t.nav.about, href: navHrefs[0] },
+    { label: t.nav.journey, href: navHrefs[1] },
+    { label: t.nav.skills, href: navHrefs[2] },
     { label: t.nav.recommendations, href: navHrefs[3] },
-    { label: t.nav.contact,         href: navHrefs[4] },
+    { label: t.nav.contact, href: navHrefs[4] },
   ];
 
   useEffect(() => {
@@ -91,28 +104,35 @@ const Navbar = () => {
           </HStack>
 
           <HStack spacing={1}>
-            <HStack spacing={0} fontFamily="mono" fontSize="xs" fontWeight="700">
+            <HStack
+              spacing={0}
+              fontFamily="mono"
+              fontSize="xs"
+              fontWeight="700"
+            >
               <Text
                 as="button"
                 px={1.5}
                 py={1}
                 cursor="pointer"
-                color={lang === 'en' ? accent : linkColor}
-                opacity={lang === 'en' ? 1 : 0.5}
-                onClick={() => setLang('en')}
+                color={lang === "en" ? accent : linkColor}
+                opacity={lang === "en" ? 1 : 0.5}
+                onClick={() => setLang("en")}
                 _hover={{ opacity: 1 }}
               >
                 EN
               </Text>
-              <Text color={linkColor} opacity={0.3} userSelect="none">|</Text>
+              <Text color={linkColor} opacity={0.3} userSelect="none">
+                |
+              </Text>
               <Text
                 as="button"
                 px={1.5}
                 py={1}
                 cursor="pointer"
-                color={lang === 'pt' ? accent : linkColor}
-                opacity={lang === 'pt' ? 1 : 0.5}
-                onClick={() => setLang('pt')}
+                color={lang === "pt" ? accent : linkColor}
+                opacity={lang === "pt" ? 1 : 0.5}
+                onClick={() => setLang("pt")}
                 _hover={{ opacity: 1 }}
               >
                 PT
@@ -141,7 +161,7 @@ const Navbar = () => {
               variant="ghost"
               size="sm"
             />
-            {/* Hamburger — mobile only */}
+            {/* Hamburger - mobile only */}
             <IconButton
               aria-label={isOpen ? "Close menu" : "Open menu"}
               icon={<Icon as={isOpen ? FaTimes : FaBars} />}
@@ -169,12 +189,7 @@ const Navbar = () => {
             borderTop="1px solid"
             borderColor={useColorModeValue("gray.300", "gray.700")}
           >
-            <VStack
-              align="stretch"
-              spacing={0}
-              px={5}
-              py={3}
-            >
+            <VStack align="stretch" spacing={0} px={5} py={3}>
               {navLinks.map(({ label, href }) => (
                 <Link
                   key={label}

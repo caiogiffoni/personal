@@ -26,29 +26,32 @@ npm run dev
 
 ## Content
 
-All page content is in `src/data/` — plain TypeScript files, no CMS or API:
+All page content is in `src/data/` - plain TypeScript files, no CMS or API:
 
 - `timeline.ts` - career and education history (categories: `engineering`, `education`, `software`, `ai`, `teaching`, `certification`)
 - `skills.ts` - skill groups
-- `projects.ts` - projects (currently not rendered)
+- `projects.ts` - projects rendered in the Projects section
 
 External links (LinkedIn, GitHub, CV) are in `src/config/config.ts`.
 
 ## Sections
 
 ```
-Navbar → Hero → StatsBanner → About → Timeline → Skills → Recommendations → Contact → Footer
+Navbar → Hero → StatsBanner → About → Timeline → Projects → Skills → Recommendations → Contact → Footer
 ```
 
-- `Projects` is commented out in `App.tsx`
 - `ScrollToTop` renders as a floating button outside the main flow
+
+## Internationalisation
+
+EN/PT toggle in the Navbar. All strings live in `src/i18n/translations.ts` keyed by section and timeline event id. Language state is managed via `src/context/LanguageContext.tsx`.
 
 ## Backlog
 
-- [ ] Portuguese (PT-BR) language toggle
 - [ ] When i hover over a button, it should increase the size
-- [ ] Add project section
 - [ ] Add a anchor to linkedin in the recommedations section
+- [x] Portuguese (PT-BR) language toggle
+- [x] Add project section
 - [x] [MOBILE] When the Hamb menu is open, if i click outside of it, it should close
 
 ## Deployment

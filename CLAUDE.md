@@ -37,7 +37,7 @@ Additional UI components:
 
 All user-facing text must be added to both `en` and `pt` in `translations.ts`. Key conventions:
 - Timeline event text is keyed by the event's `id` field under `timeline.eventTexts`
-- Project card text (title, problem, solution, impact) lives in `projects.items[]` — order must match `src/data/projects.ts`
+- Project card text (title, problem, solution, impact) lives in `projects.items[]` - order must match `src/data/projects.ts`
 - Static project data (tech stack, URLs, type) stays in `src/data/projects.ts`; the component merges both by index
 
 ### Data layer - `src/data/`

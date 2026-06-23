@@ -51,11 +51,10 @@ const Projects = () => {
           <Box w="full">
             <SimpleGrid columns={{ base: 1, md: 2 }} spacing={6} w="full">
               {pageProjects.map((project, i) => {
-                const globalIndex = page * PER_PAGE + i
-                const text = t.items[globalIndex]
+                const text = project[lang]
                 return (
                   <MotionBox
-                    key={project.title}
+                    key={project.en.title}
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.35, delay: i * 0.08 }}

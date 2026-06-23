@@ -13,7 +13,7 @@ export type Project = {
 export const projects: Project[] = [
   {
     title: "Payment Posting AI Agent",
-    company: "Thoughtful A.I.",
+    company: "Thoughtful AI",
     problem:
       "A healthcare billing team was drowning in a 60-day backlog of manual payment posting - every day of delay meant delayed revenue and mounting operational cost.",
     solution:
@@ -25,7 +25,7 @@ export const projects: Project[] = [
   },
   {
     title: "Appeal Submission AI Agent",
-    company: "Thoughtful A.I.",
+    company: "Thoughtful AI",
     problem:
       "Insurance appeal submissions required days of manual work per case, with no tracking of payer response timelines - leading to missed deadlines and lost revenue.",
     solution:

@@ -16,8 +16,12 @@ import { FaGithub, FaExternalLinkAlt, FaBriefcase, FaUser } from 'react-icons/fa
 import { MotionBox } from '../lib/motion'
 import { projects } from '../data/projects'
 import SectionHeader from './SectionHeader'
+import { useLanguage } from '../context/LanguageContext'
+import { translations } from '../i18n/translations'
 
 const Projects = () => {
+  const { lang } = useLanguage()
+  const t = translations[lang].projects
   const accent = useColorModeValue('blue.500', 'green.400')
   const subColor = useColorModeValue('gray.600', 'gray.400')
   const borderColor = useColorModeValue('gray.200', 'gray.700')
@@ -29,13 +33,15 @@ const Projects = () => {
       <Container maxW="1000px">
         <VStack spacing={{ base: 12, md: 16 }}>
           <SectionHeader
-            tag={"// what I've built"}
-            title="Work & Projects"
-            subtitle="A mix of professional case studies and personal projects - focused on automation, AI, and full-stack development."
+            tag={t.tag}
+            title={t.title}
+            subtitle={t.subtitle}
           />
 
           <SimpleGrid columns={{ base: 1, md: 2 }} spacing={6} w="full">
-            {projects.map((project, i) => (
+            {projects.map((project, i) => {
+              const text = t.items[i]
+              return (
               <MotionBox
                 key={project.title}
                 initial={{ opacity: 0, y: 20 }}
@@ -68,7 +74,7 @@ const Projects = () => {
                         </Text>
                       </HStack>
                       <Heading as="h3" fontSize="md" fontWeight="700" lineHeight="1.3">
-                        {project.title}
+                        {text.title}
                       </Heading>
                     </VStack>
 
@@ -87,27 +93,27 @@ const Projects = () => {
                   </Flex>
 
                   <VStack align="flex-start" spacing={3} flex={1}>
-                    {project.problem && (
+                    {text.problem && (
                       <Box>
                         <Text fontSize="xs" color={labelColor} fontWeight="600" textTransform="uppercase" letterSpacing="wide" mb={1}>
-                          Problem
+                          {t.labels.problem}
                         </Text>
                         <Text fontSize="sm" color={subColor} lineHeight="1.7">
-                          {project.problem}
+                          {text.problem}
                         </Text>
                       </Box>
                     )}
 
                     <Box>
                       <Text fontSize="xs" color={labelColor} fontWeight="600" textTransform="uppercase" letterSpacing="wide" mb={1}>
-                        {project.problem ? 'Solution' : 'What I built'}
+                        {text.problem ? t.labels.solution : t.labels.whatIBuilt}
                       </Text>
                       <Text fontSize="sm" color={subColor} lineHeight="1.7">
-                        {project.solution}
+                        {text.solution}
                       </Text>
                     </Box>
 
-                    {project.impact && (
+                    {text.impact && (
                       <Box
                         bg={impactBg}
                         borderLeft="3px solid"
@@ -117,25 +123,26 @@ const Projects = () => {
                         py={2}
                       >
                         <Text fontSize="xs" color={labelColor} fontWeight="600" textTransform="uppercase" letterSpacing="wide" mb={0.5}>
-                          Impact
+                          {t.labels.impact}
                         </Text>
                         <Text fontSize="sm" color={subColor} lineHeight="1.6">
-                          {project.impact}
+                          {text.impact}
                         </Text>
                       </Box>
                     )}
                   </VStack>
 
                   <Flex flexWrap="wrap" gap={1.5} mt="auto">
-                    {project.tech.map((t) => (
-                      <Badge key={t} colorScheme="green" variant="subtle" fontSize="2xs" px={2} py={0.5} borderRadius="sm">
-                        {t}
+                    {project.tech.map((tech) => (
+                      <Badge key={tech} colorScheme="green" variant="subtle" fontSize="2xs" px={2} py={0.5} borderRadius="sm">
+                        {tech}
                       </Badge>
                     ))}
                   </Flex>
                 </Box>
               </MotionBox>
-            ))}
+              )
+            })}
           </SimpleGrid>
         </VStack>
       </Container>

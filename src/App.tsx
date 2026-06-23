@@ -4,6 +4,7 @@ import Hero from "./components/Hero";
 import StatsBanner from "./components/StatsBanner";
 import About from "./components/About";
 import Timeline from "./components/Timeline";
+import Projects from "./components/Projects";
 import Skills from "./components/Skills";
 import Contact from "./components/Contact";
 import Recommendations from "./components/Recommendations";
@@ -21,7 +22,7 @@ function App() {
         <StatsBanner />
         <About />
         <Timeline />
-        {/* <Projects /> */}
+        <Projects />
         <Skills />
         <Recommendations />
         <Contact />

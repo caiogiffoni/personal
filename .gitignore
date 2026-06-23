@@ -1,6 +1,9 @@
 # Dependencies
 node_modules/
 
+temp
+.claude
+
 # Build output
 dist/
 dist-ssr/

@@ -32,10 +32,13 @@ Additional UI components:
 
 ### Internationalisation - `src/i18n/` and `src/context/`
 
-- `translations.ts` - all UI strings in `en` and `pt` keyed by section and timeline event id
+- `translations.ts` - all UI strings in `en` and `pt` keyed by section
 - `LanguageContext.tsx` - React context exposing `lang` and `setLang`; wrap the app in `<LanguageProvider>`
 
-All user-facing text must be added to both `en` and `pt` in `translations.ts`. Timeline events are keyed by their `id` field in `eventTexts`.
+All user-facing text must be added to both `en` and `pt` in `translations.ts`. Key conventions:
+- Timeline event text is keyed by the event's `id` field under `timeline.eventTexts`
+- Project card text (title, problem, solution, impact) lives in `projects.items[]` — order must match `src/data/projects.ts`
+- Static project data (tech stack, URLs, type) stays in `src/data/projects.ts`; the component merges both by index
 
 ### Data layer - `src/data/`
 
@@ -58,6 +61,22 @@ Chakra UI dark-mode-first theme. Semantic color tokens (`page-bg`, `section-alt`
 ### Motion - `src/lib/motion.ts`
 
 Exports `MotionBox` and `MotionFlex` - Chakra `Box`/`Flex` wrapped with Framer Motion. Use these for animated elements.
+
+## Content sync
+
+The `temp/` folder holds the source-of-truth documents for keeping the portfolio, resume, and LinkedIn in sync:
+
+- `temp/resume.yaml` - canonical resume; all content in the codebase must match this
+- `temp/Profile.pdf` - LinkedIn export (must be manually refreshed before each sync check)
+- `temp/sync-report.md` - output of the last `/sync-check` run; do not edit by hand
+
+Run `/sync-check` to compare all three sources and write a fresh `sync-report.md`. The skill will ask you to confirm both files are up to date before proceeding.
+
+When updating portfolio content to match `resume.yaml`, the files to touch are:
+- `src/data/timeline.ts` - job dates, roles, tech arrays per role
+- `src/data/projects.ts` - project tech arrays
+- `src/data/skills.ts` - skill groups and items
+- `src/i18n/translations.ts` - job descriptions, highlights, metrics (both `en` and `pt`)
 
 ## Deployment
 

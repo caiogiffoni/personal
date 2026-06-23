@@ -44,7 +44,12 @@ Navbar → Hero → StatsBanner → About → Timeline → Projects → Skills �
 
 ## Internationalisation
 
-EN/PT toggle in the Navbar. All strings live in `src/i18n/translations.ts` keyed by section and timeline event id. Language state is managed via `src/context/LanguageContext.tsx`.
+EN/PT toggle in the Navbar. All strings live in `src/i18n/translations.ts`. Language state is managed via `src/context/LanguageContext.tsx`.
+
+- Timeline event text → `timeline.eventTexts[id]`
+- Project card text (title, problem, solution, impact) → `projects.items[]` in the same order as `src/data/projects.ts`
+- Static project data (tech, URLs, type) → `src/data/projects.ts` only; component merges by index
+
 
 ## Backlog
 

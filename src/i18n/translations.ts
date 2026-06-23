@@ -93,6 +93,43 @@ export const translations = {
         },
       } as Record<string, TimelineEventText>,
     },
+    projects: {
+      tag: "// what I've built",
+      title: 'Work & Projects',
+      subtitle: 'A mix of professional case studies and personal projects - focused on automation, AI, and full-stack development.',
+      labels: {
+        problem: 'Problem',
+        solution: 'Solution',
+        whatIBuilt: 'What I built',
+        impact: 'Impact',
+      },
+      items: [
+        {
+          title: 'Payment Posting AI Agent',
+          problem: 'A healthcare billing team was drowning in a 60-day backlog of manual payment posting - every day of delay meant delayed revenue and mounting operational cost.',
+          solution: 'Working closely with a cross-functional team, I helped design and ship an autonomous AI agent that reads ERAs, reconciles payments, and posts them end-to-end with no human in the loop - running 24/7.',
+          impact: 'Eliminated a 60-day backlog. Payment processing moved from weeks-long queues to near real-time, accelerating revenue collection by up to 2 months.',
+        },
+        {
+          title: 'Appeal Submission AI Agent',
+          problem: 'Insurance appeal submissions required days of manual work per case, with no tracking of payer response timelines - leading to missed deadlines and lost revenue.',
+          solution: 'Collaborated with the team to build an agent that composes and submits appeals automatically, then monitors payer timelines and triggers escalation when reviewers exceed expected windows.',
+          impact: 'Reduced appeal submission time by 4 months. Proactive follow-up automation turned a reactive process into a data-driven one.',
+        },
+        {
+          title: 'B2B Order Automation Platform',
+          problem: 'Sales reps in the consumer goods industry were manually entering thousands of product orders per day into multiple systems - slow, error-prone, and unscalable.',
+          solution: 'As part of a small engineering team, we built automation pipelines that ingested orders from diverse sources (email, Excel, scraped portals), cleaned and normalised the data, and pushed it through to back-end systems automatically.',
+          impact: 'Saved clients 90% of their order processing time. Handled thousands of products daily across multiple customers.',
+        },
+        {
+          title: 'Developer Portfolio',
+          problem: '',
+          solution: 'Fully responsive portfolio site with dark mode, animations, and a contact form. Built to showcase projects and skills.',
+          impact: '',
+        },
+      ],
+    },
     skills: {
       tag: '// my tools',
       title: 'Skills & Technologies',
@@ -206,6 +243,43 @@ export const translations = {
           ],
         },
       } as Record<string, TimelineEventText>,
+    },
+    projects: {
+      tag: '// o que eu construí',
+      title: 'Trabalhos & Projetos',
+      subtitle: 'Uma mistura de estudos de caso profissionais e projetos pessoais - com foco em automação, IA e desenvolvimento full-stack.',
+      labels: {
+        problem: 'Problema',
+        solution: 'Solução',
+        whatIBuilt: 'O que construí',
+        impact: 'Impacto',
+      },
+      items: [
+        {
+          title: 'Agente de IA para Registro de Pagamentos',
+          problem: 'A equipe de faturamento de um hospital estava afogada em um backlog de 60 dias de lançamentos manuais - cada dia de atraso significava receita represada e custos operacionais crescentes.',
+          solution: 'Trabalhando junto com um time multifuncional, ajudei a projetar e entregar um agente de IA autônomo que lê remessas, reconcilia pagamentos e os lança de ponta a ponta sem nenhum humano no processo - rodando 24 horas por dia, 7 dias por semana.',
+          impact: 'Eliminamos um backlog de 60 dias. O processamento passou de filas de semanas para quase tempo real, acelerando a cobrança de receita em até 2 meses.',
+        },
+        {
+          title: 'Agente de IA para Envio de Recursos',
+          problem: 'O envio de recursos a planos de saúde exigia dias de trabalho manual por caso, sem nenhum controle dos prazos de resposta - resultando em prazos perdidos e receita não recuperada.',
+          solution: 'Em colaboração com o time, construímos um agente que elabora e envia os recursos automaticamente, monitora os prazos dos planos e dispara alertas quando os revisores ultrapassam o tempo esperado.',
+          impact: 'Reduzimos o tempo de envio em 4 meses. A automação de acompanhamento transformou um processo reativo em algo orientado por dados.',
+        },
+        {
+          title: 'Plataforma de Automação de Pedidos B2B',
+          problem: 'Representantes de vendas na indústria de bens de consumo inseriam manualmente milhares de pedidos por dia em múltiplos sistemas - lento, sujeito a erros e sem escalabilidade.',
+          solution: 'Como parte de um time de engenharia enxuto, construímos pipelines de automação que capturam pedidos de diversas fontes (e-mail, Excel, portais via scraping), limpam e normalizam os dados e os enviam automaticamente para os sistemas de back-end.',
+          impact: 'Economizamos 90% do tempo que os clientes gastavam processando pedidos. A plataforma processava milhares de produtos por dia para múltiplos clientes.',
+        },
+        {
+          title: 'Portfólio de Desenvolvedor',
+          problem: '',
+          solution: 'Site de portfólio totalmente responsivo com modo escuro, animações e formulário de contato. Criado para apresentar projetos e habilidades.',
+          impact: '',
+        },
+      ],
     },
     skills: {
       tag: '// minhas ferramentas',

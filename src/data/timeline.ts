@@ -128,7 +128,7 @@ export const timelineEvents: TimelineEvent[] = [
     id: "8",
     period: "Nov 2022 - Sep 2024",
     role: "Software Developer",
-    organization: "Weduu - Data & A.I.",
+    organization: "Weduu - Data & AI",
     description:
       "Built B2B commerce automation for the consumer goods industry, saving clients 90% of manual order processing time.",
     highlights: [

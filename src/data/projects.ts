@@ -37,7 +37,7 @@ export const projects: Project[] = [
   },
   {
     title: "B2B Order Automation Platform",
-    company: "Weduu - Data & A.I.",
+    company: "Weduu - Data & AI",
     problem:
       "Sales reps in the consumer goods industry were manually entering thousands of product orders per day into multiple systems - slow, error-prone, and unscalable.",
     solution:

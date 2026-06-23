@@ -26,14 +26,6 @@ import { useEffect, useRef } from "react";
 import { useLanguage } from "../context/LanguageContext";
 import { translations } from "../i18n/translations";
 
-const navHrefs = [
-  "#about",
-  "#journey",
-  "#skills",
-  "#recommendations",
-  "#contact",
-];
-
 const Navbar = () => {
   const { toggleColorMode, colorMode } = useColorMode();
   const bg = useColorModeValue("#e2e2e2", "#212121");
@@ -44,11 +36,12 @@ const Navbar = () => {
   const { lang, setLang } = useLanguage();
   const t = translations[lang];
   const navLinks = [
-    { label: t.nav.about, href: navHrefs[0] },
-    { label: t.nav.journey, href: navHrefs[1] },
-    { label: t.nav.skills, href: navHrefs[2] },
-    { label: t.nav.recommendations, href: navHrefs[3] },
-    { label: t.nav.contact, href: navHrefs[4] },
+    { label: t.nav.about, href: "#about" },
+    { label: t.nav.journey, href: "#journey" },
+    { label: t.nav.projects, href: "#projects" },
+    { label: t.nav.skills, href: "#skills" },
+    { label: t.nav.recommendations, href: "#recommendations" },
+    { label: t.nav.contact, href: "#contact" },
   ];
 
   useEffect(() => {

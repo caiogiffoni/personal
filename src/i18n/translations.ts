@@ -9,6 +9,7 @@ export const translations = {
     nav: {
       about: 'About',
       journey: 'Journey',
+      projects: 'Projects',
       skills: 'Skills',
       recommendations: 'Recommendations',
       contact: 'Contact',
@@ -134,6 +135,7 @@ export const translations = {
     nav: {
       about: 'Sobre',
       journey: 'Jornada',
+      projects: 'Projetos',
       skills: 'Habilidades',
       recommendations: 'Recomendações',
       contact: 'Contato',

@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import {
   Box,
   Container,
@@ -12,6 +12,7 @@ import {
   Icon,
   Link,
   IconButton,
+  useBreakpointValue,
   useColorModeValue,
 } from '@chakra-ui/react'
 import { FaGithub, FaExternalLinkAlt, FaBriefcase, FaUser, FaChevronLeft, FaChevronRight } from 'react-icons/fa'
@@ -21,11 +22,10 @@ import SectionHeader from './SectionHeader'
 import { useLanguage } from '../context/LanguageContext'
 import { translations } from '../i18n/translations'
 
-const PER_PAGE = 2
-
 const Projects = () => {
   const { lang } = useLanguage()
   const t = translations[lang].projects
+  const perPage = useBreakpointValue({ base: 1, md: 2 }) ?? 2
   const accent = useColorModeValue('blue.500', 'green.400')
   const subColor = useColorModeValue('gray.600', 'gray.400')
   const borderColor = useColorModeValue('gray.200', 'gray.700')
@@ -35,8 +35,10 @@ const Projects = () => {
   const dotInactive = useColorModeValue('gray.300', 'gray.600')
 
   const [page, setPage] = useState(0)
-  const totalPages = Math.ceil(projects.length / PER_PAGE)
-  const pageProjects = projects.slice(page * PER_PAGE, page * PER_PAGE + PER_PAGE)
+  const totalPages = Math.ceil(projects.length / perPage)
+  const pageProjects = projects.slice(page * perPage, page * perPage + perPage)
+
+  useEffect(() => { setPage(0) }, [perPage])
 
   return (
     <Box as="section" id="projects" py={{ base: 20, md: 28 }} px={{ base: 5, md: 10 }}>

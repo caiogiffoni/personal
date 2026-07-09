@@ -18,7 +18,7 @@ export type Project = {
 export const projects: Project[] = [
   {
     company: "Thoughtful AI",
-    tech: ["Python", "RPA", "AWS", "Robocorp"],
+    tech: ["Python", "LLM APIs (OpenAI)", "Prompt Engineering", "RPA", "AWS", "Robocorp"],
     type: "professional",
     en: {
       title: "Payment Posting AI Agent",
@@ -35,7 +35,7 @@ export const projects: Project[] = [
   },
   {
     company: "Thoughtful AI",
-    tech: ["Python", "RPA", "AWS", "Robocorp"],
+    tech: ["Python", "LLM APIs (OpenAI)", "Prompt Engineering", "RPA", "AWS", "Robocorp"],
     type: "professional",
     en: {
       title: "Appeal Submission AI Agent",
@@ -52,7 +52,7 @@ export const projects: Project[] = [
   },
   {
     company: "Weduu - Data & AI",
-    tech: ["Python", "Flask", "Vue", "PostgreSQL", "GCP", "pandas"],
+    tech: ["Python", "Flask", "Vue", "PostgreSQL", "GCP", "Azure", "pandas"],
     type: "professional",
     en: {
       title: "B2B Order Automation Platform",
@@ -87,7 +87,7 @@ export const projects: Project[] = [
   },
   {
     company: "Personal project",
-    tech: ["Python", "Django", "Django REST Framework", "Pydantic", "OpenRouteService", "pytest"],
+    tech: ["Python", "Django", "Django REST Framework", "Pydantic", "OpenRouteService", "Docker", "pytest"],
     githubUrl: "https://github.com/caiogiffoni/truck-trip-planner-back",
     type: "personal",
     en: {

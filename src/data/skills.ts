@@ -17,17 +17,17 @@ export const skillGroups: SkillGroup[] = [
   },
   {
     label: "Cloud & Infra",
-    skills: ["AWS", "GCP", "Azure", "Docker", "Kubernetes"],
+    skills: ["AWS", "GCP", "Azure", "Docker", "Kubernetes", "GitHub Actions", "Bitbucket Pipelines"],
     color: "orange.400",
   },
   {
     label: "Data & Databases",
-    skills: ["PostgreSQL", "SQL", "NoSQL", "pandas"],
+    skills: ["PostgreSQL", "SQL", "NoSQL", "pandas", "Prisma", "TypeORM"],
     color: "purple.400",
   },
   {
     label: "AI & Automation",
-    skills: ["RPA", "Robocorp", "Selenium", "Playwright", "OpenAI API", "AI Agents"],
+    skills: ["RPA", "Robocorp", "Selenium", "Playwright", "LLM APIs (OpenAI, Claude, Gemini)", "Prompt Engineering", "AI Agents"],
     color: "teal.400",
   },
   {

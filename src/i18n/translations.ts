@@ -86,8 +86,8 @@ export const translations = {
           highlights: [
             'Payment Posting Agent: eliminated a 60-day billing backlog, accelerating revenue by 2 months',
             'Appeal Submission Agent: cut submission time by 4 months with proactive payer follow-up automation',
-            'Established automated testing strategies across agent workflows',
-            'Mentored new engineers; supported global CI/CD delivery workflows',
+            'Grew automated test coverage to 80% with pytest, gating GitHub Actions and Bitbucket CI/CD pipelines to block regressions',
+            'Onboarded 4-6 engineers to independent contribution within 2 weeks; supported global CI/CD delivery workflows',
             'Collaborated with cross-functional teams across LATAM and the US to develop and implement customized solutions aligned with business objectives',
             'Engaged directly with healthcare provider clients through requirements gathering sessions, product demos, and onboarding calls, ensuring solutions were tailored to each customer\'s operational workflows',
           ],
@@ -212,8 +212,8 @@ export const translations = {
           highlights: [
             'Agente de Registro de Pagamentos: eliminou um backlog de 60 dias, acelerando a receita em até 2 meses',
             'Agente de Envio de Recursos: reduziu o tempo de submissão em 4 meses com automação de acompanhamento proativo',
-            'Estabeleceu estratégias de testes automatizados nos fluxos dos agentes',
-            'Mentoria de novos engenheiros e suporte a pipelines de entrega CI/CD globais',
+            'Elevou a cobertura de testes automatizados para 80% com pytest, integrando gates de teste aos pipelines de CI/CD (GitHub Actions e Bitbucket) para bloquear regressões',
+            'Onboarding de 4-6 engenheiros até a contribuição independente em 2 semanas; suporte a pipelines de entrega CI/CD globais',
             'Colaboração com equipes multifuncionais na América Latina e nos EUA para desenvolver soluções alinhadas aos objetivos do negócio',
             'Contato direto com clientes de saúde em sessões de levantamento de requisitos, demos de produto e onboarding, garantindo soluções adaptadas à realidade operacional de cada cliente',
           ],
